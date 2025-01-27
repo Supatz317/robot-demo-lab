@@ -4,14 +4,15 @@ Resource          resource.robot
 
 *** Test Cases ***
 UAT-Lab7-001 : Open Form
-    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-    ${chrome_options.binary_location}     Set Variable       ${CHROME_BROWSER_PATH}
-    ${service}   Evaluate   sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")
-    
-    Create Webdriver    Chrome    options=${chrome_options}    service=${service}
+    # ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    # ${chrome_options.binary_location}     Set Variable       ${CHROME_BROWSER_PATH}
+    # ${service}   Evaluate   sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")
+    # Create Webdriver    Chrome    options=${chrome_options}    service=${service}
+    Open Browser	${FORM URL}    Chrome
 	Go To    ${FORM URL}    
 	Location Should Be    ${FORM URL}
 	Set Selenium Speed    ${DELAY}
+	# Close Browser
 
 UAT-Lab7-001 : Record Success
     Go To    ${FORM URL}   
