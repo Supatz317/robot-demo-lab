@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2025-01-27T11:04:51.245220" rpa="false" schemaversion="5">
+<suite id="s1" name="Lab7 3" source="C:\Users\lenovo\Documents\year3-2\software-engineer\Lab7_3">
+<suite id="s1-s1" name="Login Tests" source="C:\Users\lenovo\Documents\year3-2\software-engineer\Lab7_3\login_tests">
+<suite id="s1-s1-s1" name="Complete" source="C:\Users\lenovo\Documents\year3-2\software-engineer\Lab7_3\login_tests\complete.robot">
+<test id="s1-s1-s1-t1" name="UAT-Lab7-001 : Open Form" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-27T11:04:51.542620" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020398F80590&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-27T11:04:51.541622" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-27T11:04:51.543646" level="INFO">${chrome_options.binary_location} = C:\Users\lenovo\Documents\year3-2\software-engineer\Lab7_3\login_tests/../ChromeForTesting/chrome/win64-132.0.6834.110/chrome-win64/chrome.exe</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-27T11:04:51.543646" elapsed="0.000975"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-27T11:04:51.545621" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x0000020398F810A0&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-27T11:04:51.544621" elapsed="0.002000"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-01-27T11:04:51.547624" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-01-27T11:04:51.546621" elapsed="2.132550"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-27T11:04:53.680165" level="INFO">Opening url 'http://localhost:7272/Form.html'</msg>
+<arg>${FORM URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-27T11:04:53.679171" elapsed="0.526366"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-27T11:04:54.217709" level="INFO">Current location is 'http://localhost:7272/Form.html'.</msg>
+<arg>${FORM URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-27T11:04:54.206693" elapsed="0.012029"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-01-27T11:04:54.219705" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2025-01-27T11:04:51.539618" elapsed="2.682098"/>
+</test>
+<status status="PASS" start="2025-01-27T11:04:51.280678" elapsed="2.943023"/>
+</suite>
+<status status="PASS" start="2025-01-27T11:04:51.277239" elapsed="2.951465"/>
+</suite>
+<status status="PASS" start="2025-01-27T11:04:51.253234" elapsed="2.977469"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Lab7 3">Lab7 3</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login Tests">Lab7 3.Login Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Complete">Lab7 3.Login Tests.Complete</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
